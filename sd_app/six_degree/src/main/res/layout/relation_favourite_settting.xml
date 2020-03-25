@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="设置偏好，分值高的关系将优先推荐给您"
+        app:layout_constraintBottom_toTopOf="@id/qingshu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/qingshu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="亲属"
+        app:layout_constraintBottom_toTopOf="@id/tongshi"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/summary" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tongshi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="同事"
+        app:layout_constraintBottom_toTopOf="@id/pengyou"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/qingshu" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/pengyou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="336dp"
+        android:text="朋友"
+        app:layout_constraintBottom_toTopOf="@id/tongxue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tongshi" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tongxue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="同学"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pengyou" />
+
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/qinshu_value"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:max="10"
+        android:min="1"
+        android:progress="10"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/qingshu" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/tongshi_value"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:max="10"
+        android:min="1"
+        android:progress="9"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tongshi" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/pengyou_value"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:max="10"
+        android:min="1"
+        android:progress="8"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/pengyou" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/tongxue_value"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:max="10"
+        android:min="1"
+        android:progress="7"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tongxue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

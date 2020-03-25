@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/messages_group"
+        android:icon="@drawable/chat"
+        android:contentDescription="消息"
+        android:title="消息"/>
+    <item
+            android:id="@+id/recommend_content"
+            android:icon="@drawable/library_books"
+            android:contentDescription="@string/recommend"
+            android:title="@string/recommend"/>
+    <item
+        android:id="@+id/search_fragment"
+        android:icon="@drawable/flare"
+        android:contentDescription="@string/search_cd"
+        android:title="@string/search_cd"/>
+    <item
+            android:id="@+id/group_contacts"
+            android:icon="@drawable/groups"
+            android:contentDescription="@string/cd_contacts"
+            android:title="@string/title_contacts"/>
+    <item
+        android:id="@+id/setting_preference"
+        android:icon="@drawable/person"
+        android:contentDescription="@string/my"
+        android:title="@string/my"/>
+</menu>

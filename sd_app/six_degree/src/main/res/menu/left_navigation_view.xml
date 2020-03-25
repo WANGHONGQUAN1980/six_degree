@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:menuCategory="system"
+        android:orderInCategory="1">
+        <item
+            android:id="@+id/share"
+            android:contentDescription="分享"
+            android:icon="@drawable/share"
+            android:title="分享" />
+        <item
+            android:id="@+id/contact"
+            android:contentDescription="合作"
+            android:icon="@drawable/email"
+            android:title="@string/sys_email" />
+        <item
+            android:id="@+id/bug"
+            android:contentDescription="建议意见"
+            android:icon="@drawable/bug_report"
+            android:title="建议意见" />
+        <item
+            android:id="@+id/version"
+            android:checkable="false"
+            android:contentDescription="版本"
+            android:enabled="false"
+            android:icon="@drawable/update"
+            android:title="当前版本" />
+        <item
+            android:id="@+id/home"
+            android:contentDescription="官网"
+            android:icon="@drawable/home"
+            android:title="官网" />
+        <item
+            android:id="@+id/private_policy"
+            android:contentDescription="隐私政策"
+            android:icon="@drawable/security"
+            android:title="用户协议隐私政策" />
+    </group>
+    <group
+        android:menuCategory="system"
+        android:orderInCategory="2">
+        <item
+            android:id="@+id/register"
+            android:contentDescription="注册"
+            android:icon="@drawable/account_circle"
+            android:title="注册" />
+        <item
+            android:id="@+id/login"
+            android:contentDescription="登录"
+            android:icon="@drawable/transfer_within_a_station"
+            android:title="登录" />
+        <item
+            android:id="@+id/exit"
+            android:contentDescription="退出"
+            android:icon="@drawable/exit"
+            android:title="退出" />
+        <item android:title="友情链接">
+            <menu>
+                <item
+                    android:id="@+id/winux_cmd"
+                    android:contentDescription="Winux CMD"
+                    android:icon="@drawable/ic_important_devices_black_24dp"
+                    android:title="Winux CMD" />
+                <item
+                    android:id="@+id/out_door"
+                    android:contentDescription="一起户外"
+                    android:icon="@drawable/ic_directions_bike_black_24dp"
+                    android:title="一起户外" />
+            </menu>
+        </item>
+    </group>
+</menu>

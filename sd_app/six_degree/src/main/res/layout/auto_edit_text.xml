@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:hint="请输入名称或首字母"
+            android:id="@+id/autoCompleteTextView"
+            android:maxLines="1"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/searchPrompt"
+            android:drawableStart="@drawable/ic_list"
+            android:text="提示"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/year"
+            android:text="年份"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <cn.forward.androids.views.StringScrollPicker
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/years"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            app:spv_center_item_background="#22888888"
+            app:spv_disallow_intercept_touch="true"
+            app:spv_max_text_size="18dp"
+            app:spv_min_text_size="12dp"
+            android:theme="@style/AppAlertDialogContent"
+            app:spv_visible_item_count="3" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

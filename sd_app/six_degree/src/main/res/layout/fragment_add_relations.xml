@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="3dp"
+    tools:context="whq.projects.sd.ui.search.AddRelationsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tv_relation_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_help"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/sample_image"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintVertical_weight="1"
+                android:background="@color/md_blue_700"
+                android:layout_marginStart="8dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@id/prompt_rule"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/prompt_rule"
+                app:layout_constraintTop_toTopOf="@id/prompt_rule"
+                app:srcCompat="@drawable/sample_relation" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/prompt_rule"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="start|top"
+                android:text="@string/prompt_rule"
+                android:textColor="@color/md_grey_800"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/line"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/sample_image"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:background="@color/md_blue_100"
+                app:layout_constraintBottom_toTopOf="@id/tv_relation"
+                app:layout_constraintTop_toBottomOf="@id/prompt_rule" />
+
+            <EditText
+                android:id="@+id/tv_relation"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="top|start"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/prompts"
+                app:layout_constraintTop_toBottomOf="@id/line"
+                app:layout_constraintVertical_weight="1"
+                tools:text="dadfadsfasdfasdadfsfasdfas" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/prompts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/tv_relation"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/prompt_rule"
+                tools:listitem="@layout/input_prompt" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_help"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start|top"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@id/webviewer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_relation_container" />
+
+        <WebView
+            android:id="@+id/webviewer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_help" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/contact_it_include"
+        layout="@layout/contact_it"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/md_white_1000"
+        android:fitsSystemWindows="false" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/md_white_1000"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/add_relations_toolbar_include"
+            layout="@layout/add_relations_toolbar" />
+
+        <include
+            android:id="@+id/sd_fragment_toolbar_include"
+            layout="@layout/sd_fragment_toolbar" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,4 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/groups" android:state_selected="false"/>
+    <item android:drawable="@drawable/groups_green" android:state_selected="true"/>
+</selector>

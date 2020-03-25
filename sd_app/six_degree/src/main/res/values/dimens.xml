@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="message_person_img_height">24dp</dimen>
+    <dimen name="message_person_img_width">48dp</dimen>
+    <dimen name="session_content_margin">3dp</dimen>
+    <dimen name="contact_it_width">240dp</dimen>
+    <dimen name="aar_wave_height">60dp</dimen>
+    <dimen name="aar_bubble_size">30dp</dimen>
+    <dimen name="aar_footer_height">200dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

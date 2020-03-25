@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/progress" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/tab_item_search" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/tab_item_group" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <LinearLayout
+        android:id="@+id/control_panel_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <LinearLayout
+            android:id="@+id/groups2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_selectedTypes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ExpandableListView
+                android:id="@+id/expand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </ExpandableListView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/groups"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/tongxue"
+                android:prompt="@string/contact_group_tongxue"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/contact_group_tongxue"
+                app:srcCompat="@drawable/tongxue" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/tongshi"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/contact_group_tongshi"
+                app:srcCompat="@drawable/tongshi" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/qinshu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/contact_group_qinshu"
+                app:srcCompat="@drawable/qinshu" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/pengyou"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/contact_group_pengyou"
+                app:srcCompat="@drawable/pengyou" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/no_group"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/contact_no_group"
+                android:textStyle="bold"
+                app:srcCompat="@drawable/group_no" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/search_keyword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autofillHints="@string/search_hint"
+                android:hint="@string/search_hint"
+                android:inputType="textAutoComplete" />
+
+            <Button
+                android:id="@+id/go"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/select_all"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/select_all"
+                android:gravity="center|center_vertical"
+                android:text="@string/select_all"
+                app:srcCompat="@drawable/select_all" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+</LinearLayout>

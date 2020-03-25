@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bug_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"
+            android:text="非常感谢您的反馈,因为-这是我的动力～"
+            android:textColor="@color/md_blue_700"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/option"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_list"
+            android:gravity="center_vertical"
+            android:text="格式"
+            app:layout_constraintBottom_toTopOf="@+id/editor"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/at"
+            app:layout_constraintTop_toBottomOf="@id/bug_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/notifications_blue"
+            android:gravity="center_vertical"
+            android:text="\@它"
+            app:layout_constraintBottom_toBottomOf="@id/option"
+            app:layout_constraintLeft_toRightOf="@id/option"
+            app:layout_constraintRight_toLeftOf="@id/edit"
+            app:layout_constraintTop_toTopOf="@id/option" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/edit"
+            android:gravity="center_vertical"
+            android:text="编辑模式"
+            app:layout_constraintBottom_toBottomOf="@id/option"
+            app:layout_constraintLeft_toRightOf="@id/at"
+            app:layout_constraintRight_toLeftOf="@id/protect"
+            app:layout_constraintTop_toTopOf="@id/option" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/protect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/lock_open"
+            android:gravity="center_vertical"
+            android:text="设为保密"
+            app:layout_constraintBottom_toBottomOf="@id/option"
+            app:layout_constraintLeft_toRightOf="@id/edit"
+            app:layout_constraintRight_toLeftOf="@id/save"
+            app:layout_constraintTop_toTopOf="@id/option" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:drawableStart="@drawable/save"
+            android:gravity="center_vertical"
+            android:text="保存"
+            app:layout_constraintBottom_toBottomOf="@id/option"
+            app:layout_constraintLeft_toRightOf="@id/protect"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/option" />
+
+        <whq.projects.utilities.RichEditor
+            android:id="@+id/editor"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/titleContainer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/option"
+            app:layout_constraintVertical_weight="1" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/titleContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:hint="在这里输入标题"
+            android:maxLength="30"
+            android:singleLine="true"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/keywordContainer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editor" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/keywordContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:hint="在这里输入关键字,逗号分隔"
+            android:maxLength="30"
+            android:singleLine="true"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleContainer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/md_white_1000"
+        android:fitsSystemWindows="false"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:id="@+id/navigationScrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:background="@color/md_white_1000">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_undo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/undo"
+                    android:text="回退"
+                    app:layout_constraintBottom_toTopOf="@id/action_redo"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_redo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/redo"
+                    android:text="重做"
+                    app:layout_constraintBottom_toTopOf="@id/action_bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_undo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/bold"
+                    android:text="加粗"
+                    app:layout_constraintBottom_toTopOf="@id/action_italic"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_redo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_italic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/italic"
+                    android:text="倾斜"
+                    app:layout_constraintBottom_toTopOf="@id/action_subscript"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_subscript"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/subscript"
+                    android:text="下标"
+                    app:layout_constraintBottom_toTopOf="@id/action_superscript"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_italic" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_superscript"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/superscript"
+                    android:text="上标"
+                    app:layout_constraintBottom_toTopOf="@id/action_strikethrough"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_subscript" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_strikethrough"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/strikethrough"
+                    android:text="删除"
+                    app:layout_constraintBottom_toTopOf="@id/action_underline"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_superscript" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_underline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/underline"
+                    android:text="下划"
+                    app:layout_constraintBottom_toTopOf="@id/action_heading1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_strikethrough" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_heading1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/h1"
+                    android:text="标1"
+                    app:layout_constraintBottom_toTopOf="@id/action_heading2"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_underline" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_heading2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/h2"
+                    android:text="标2"
+                    app:layout_constraintBottom_toTopOf="@id/action_heading3"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_heading1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_heading3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/h3"
+                    android:text="标3"
+                    app:layout_constraintBottom_toTopOf="@id/action_heading4"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_heading2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_heading4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/h4"
+                    android:text="标4"
+                    app:layout_constraintBottom_toTopOf="@id/action_heading5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_heading3" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_heading5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/h5"
+                    android:text="标5"
+                    app:layout_constraintBottom_toTopOf="@id/action_heading6"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_heading4" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_heading6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/h6"
+                    android:text="标6"
+                    app:layout_constraintBottom_toTopOf="@id/action_txt_color"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_heading5" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_txt_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/txt_color"
+                    android:text="颜色"
+                    app:layout_constraintBottom_toTopOf="@id/action_bg_color"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_heading6" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_bg_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/bg_color"
+                    android:text="填充"
+                    app:layout_constraintBottom_toTopOf="@id/action_indent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_txt_color" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_indent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/indent"
+                    android:text="右缩"
+                    app:layout_constraintBottom_toTopOf="@id/action_outdent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_bg_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_outdent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/outdent"
+                    android:text="左缩"
+                    app:layout_constraintBottom_toTopOf="@id/action_align_left"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_indent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_align_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/justify_left"
+                    android:text="左齐"
+                    app:layout_constraintBottom_toTopOf="@id/action_align_center"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_outdent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_align_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/justify_center"
+                    android:text="居中"
+                    app:layout_constraintBottom_toTopOf="@id/action_align_right"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_align_left" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_align_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/justify_right"
+                    android:text="右齐"
+                    app:layout_constraintBottom_toTopOf="@id/action_insert_bullets"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_align_center" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_insert_bullets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/bullets"
+                    android:text="标记"
+                    app:layout_constraintBottom_toTopOf="@id/action_insert_numbers"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_align_right" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_insert_numbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/numbers"
+                    android:text="编号"
+                    app:layout_constraintBottom_toTopOf="@id/action_blockquote"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_insert_bullets" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_blockquote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/blockquote"
+                    android:text="引用"
+                    app:layout_constraintBottom_toTopOf="@id/action_insert_image"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_insert_numbers" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_insert_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/insert_image"
+                    android:text="插图"
+                    app:layout_constraintBottom_toTopOf="@id/action_insert_link"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_blockquote" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/action_insert_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:drawableLeft="@drawable/insert_link"
+                    android:text="链接"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/action_insert_image" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/color_picker_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:constraint_referenced_ids="red,green,blue,color_tv" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/red"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:max="255"
+            android:progress="0"
+            app:layout_constraintBottom_toTopOf="@id/green"
+            app:layout_constraintLeft_toRightOf="@id/navigationScrollView"
+            app:layout_constraintRight_toLeftOf="@id/color_tv"
+            app:layout_constraintTop_toTopOf="@id/color_tv" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/green"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:max="255"
+            android:progress="0"
+            app:layout_constraintBottom_toTopOf="@id/blue"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="@id/red"
+            app:layout_constraintRight_toRightOf="@id/red"
+            app:layout_constraintTop_toBottomOf="@id/red" />
+
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/blue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:max="255"
+            android:progress="0"
+            app:layout_constraintBottom_toBottomOf="@id/color_tv"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="@id/red"
+            app:layout_constraintRight_toRightOf="@id/red"
+            app:layout_constraintTop_toBottomOf="@id/green" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/color_tv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="3dp"
+            android:background="@color/tabBlack"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="30sp"
+            app:layout_constraintLeft_toRightOf="@id/red"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="颜色" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/link_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="link_title,link_href,cancel_action,login" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cancel_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:src="@drawable/close_red"
+            app:layout_constraintLeft_toRightOf="@id/navigationScrollView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/check"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/link_title"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:hint="在这里输入标题"
+            app:layout_constraintLeft_toLeftOf="@id/cancel_action"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cancel_action" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/link_href"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:hint="在这里输入链接"
+            app:layout_constraintLeft_toRightOf="@id/navigationScrollView"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/link_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        layout="@layout/contact_it"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/md_white_1000"
+        android:fitsSystemWindows="false" />
+</androidx.drawerlayout.widget.DrawerLayout>

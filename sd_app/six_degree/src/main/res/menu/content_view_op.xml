@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/view_it"
+        android:icon="@drawable/person"
+        app:showAsAction="always"
+        android:title="看" />
+    <item
+        android:id="@+id/send"
+        app:showAsAction="always"
+        android:icon="@drawable/chat"
+        android:title="聊" />
+    <item
+        android:id="@+id/zan"
+        app:showAsAction="always"
+        android:icon="@drawable/thumb_up"
+        android:title="踩" />
+    <item
+        app:showAsAction="always"
+        android:id="@+id/cai"
+        android:checkable="true"
+        android:checked="false"
+        android:icon="@drawable/thumb_down"
+        android:title="赞" />
+    <item
+        app:showAsAction="always"
+        android:id="@+id/favourite_person"
+        android:icon="@drawable/add"
+        android:title="关注" />
+    <item
+        app:showAsAction="always"
+        android:id="@+id/fav"
+        android:icon="@drawable/favourite"
+        android:title="收藏" />
+</menu>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/option_view_it"
+        android:contentDescription="看"
+        android:icon="@drawable/person"
+        android:title="看" />
+    <item
+        android:id="@+id/option_send"
+        android:contentDescription="看"
+        android:icon="@drawable/chat"
+        android:title="聊" />
+    <item
+        android:id="@+id/option_zan"
+        android:checkable="true"
+        android:contentDescription="看"
+        android:icon="@drawable/thumb_up_b"
+        android:title="赞" />
+    <item
+        android:id="@+id/option_cai"
+        android:checkable="true"
+        android:contentDescription="看"
+        android:icon="@drawable/thumb_down_b"
+        android:title="踩" />
+    <item
+        android:id="@+id/option_add"
+        android:checkable="true"
+        android:contentDescription="看"
+        android:icon="@drawable/add_b"
+        android:title="加" />
+    <item
+        android:id="@+id/option_fav"
+        android:checkable="true"
+        android:contentDescription="看"
+        android:icon="@drawable/favourite_b"
+        android:title="藏" />
+</menu>

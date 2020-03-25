@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/search_fragment">
+
+    <fragment
+        android:id="@+id/content_list_fragment"
+        android:name="whq.projects.chat.fragments.ContentListFragment"
+        android:label="短篇"
+        tools:layout="@layout/my_focus" />
+    <fragment
+        android:id="@+id/content_other_fragment"
+        android:name="whq.projects.chat.fragments.ContentOtherFragment"
+        android:label="推荐"
+        tools:layout="@layout/fragment_contact" />
+
+    <fragment
+        android:id="@+id/messages_group"
+        android:name="whq.projects.chat.fragments.MessagesGroup"
+        android:label="群组" />
+
+    <fragment
+        android:id="@+id/message_session"
+        android:name="whq.projects.chat.fragments.MessageSession"
+        android:label="消息">
+        <deepLink app:uri="http://www.sixdegree.ren/session/{GROUP_ID_KEY}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/show_one_person"
+        android:name="whq.projects.sd.ui.search.ShowOnePersonFragment"
+        android:label="六度关系" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="whq.projects.utilities.Login"
+        android:label="登录">
+        <deepLink app:uri="http://www.sixdegree.ren/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="whq.projects.utilities.Register"
+        android:label="注册">
+        <deepLink app:uri="http://www.sixdegree.ren/register" />
+    </fragment>
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="whq.projects.utilities.SuccessFragment"
+        android:label="成功">
+        <deepLink app:uri="http://www.sixdegree.ren/success/{text}" />
+    </fragment>
+    <fragment
+        android:id="@+id/content_publish_fragment"
+        android:name="whq.projects.chat.fragments.ContentPublishFragment"
+        android:label="短篇"
+        tools:layout="@layout/fragment_contact" />
+
+
+    <fragment
+        android:id="@+id/content_publish_fragment_bug"
+        android:name="whq.projects.chat.fragments.ContentPublishFragment"
+        android:label="问题反馈"
+        tools:layout="@layout/fragment_contact" />
+
+    <fragment
+        android:id="@+id/contactsSelectFragment"
+        android:name="whq.projects.chat.activities.ContactsSelectFragment"
+        android:label="请选择用户" />
+
+
+    <fragment
+        android:id="@+id/group_contacts"
+        android:name="whq.projects.sd.contacts.GroupContacts"
+        android:label="@string/title_contacts"
+        tools:layout="@layout/fragment_contact" />
+
+
+    <fragment
+        android:id="@+id/recommend_content"
+        android:name="whq.projects.sd.ui.recommend.RecommendContent"
+        android:label="@string/recommend"
+        tools:layout="@layout/fragment_contact" />
+
+
+    <fragment
+        android:id="@+id/content_my_focus_fragment"
+        android:name="whq.projects.sd.ui.recommend.ContentMyFocusFragment"
+        android:label="关注"
+        tools:layout="@layout/my_focus" />
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="whq.projects.sd.ui.search.SearchFragment"
+        android:label="@string/search_cd" />
+    <fragment
+        android:id="@+id/add_relations"
+        android:name="whq.projects.sd.ui.search.AddRelationsFragment"
+        android:label="添加关系" />
+
+    <fragment
+        android:id="@+id/link_two_person"
+        android:name="whq.projects.sd.ui.search.LinkTwoPersonFragment"
+        android:label="两人关系" />
+
+    <fragment
+        android:id="@+id/zupu"
+        android:name="whq.projects.sd.ui.search.ZupuFragment"
+        android:label="亲人族谱" />
+    <fragment
+        android:id="@+id/favList"
+        android:name="whq.projects.sd.ui.search.FavListFragment"
+        android:label="六度收藏" />
+    <fragment
+        android:id="@+id/favShow"
+        android:name="whq.projects.sd.ui.search.SDShowFragment"
+        android:label="六度" />
+
+    <fragment
+        android:id="@+id/setting_preference"
+        android:name="whq.projects.sd.profile.preference.SettingPreference"
+        android:label="@string/my" />
+</navigation>

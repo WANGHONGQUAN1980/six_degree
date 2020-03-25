@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/add_relations"
+        android:icon="@drawable/upload_green"
+        android:title="添加关系" />
+    <item
+        android:id="@+id/link_two_person"
+        android:icon="@drawable/link_h_green"
+        android:title="两人关系" />
+    <item
+        android:id="@+id/show_one_person"
+        android:icon="@drawable/my_net_green"
+        android:title="六度关系" />
+    <item
+        android:id="@+id/zupu"
+        android:icon="@drawable/hierachies_green"
+        android:title="亲人族谱" />
+</menu>

@@ -1,0 +1,47 @@
+{
+  "baseType": "qin_shu",
+  "endNode": "b511b04bc237d118e4ab69e40fae33ce",
+  "pairId": "pairIdc1e7b3f237768160ac0276e586619e71",
+  "rId": "rid_090c57ea31cfbc02f7e85bcad8b5930d",
+  "startNode": "db634b0f123f42dd4f5528edfd49a6eb",
+  "type": "夫妻",
+  "updated": 0,
+  "source": {
+    "id": "db634b0f123f42dd4f5528edfd49a6eb",
+    "labels": [
+      "林如海"
+    ],
+    "name": "林如海",
+    "properties": {
+      "writer": "f899139df5e1059396431415e770c6dd",
+      "mobileMd5": "db634b0f123f42dd4f5528edfd49a6eb",
+      "writerName": "六度",
+      "created": "1579497124177"
+    },
+    "index": 1,
+    "x": 97.3592875612263,
+    "y": 263.09953320650453,
+    "vy": 0.9649040510559413,
+    "vx": -0.08270498703218788
+  },
+  "target": {
+    "id": "b511b04bc237d118e4ab69e40fae33ce",
+    "labels": [
+      "贾敏"
+    ],
+    "name": "贾敏",
+    "properties": {
+      "writer": "f899139df5e1059396431415e770c6dd",
+      "mobileMd5": "b511b04bc237d118e4ab69e40fae33ce",
+      "writerName": "六度",
+      "created": "1579497124173"
+    },
+    "index": 4,
+    "x": 213.58369163748185,
+    "y": 288.5519490469282,
+    "vy": 1.1650755301842857,
+    "vx": -0.10212891812823106
+  },
+  "linknum": 1,
+  "index": 1
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:drawableStart="@drawable/edit"
+        android:text="添加" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/network"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:drawableStart="@drawable/flare"
+        android:text="查看" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/help_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="8dp"
+        android:drawableStart="@drawable/help_outline"
+        android:gravity="center_vertical"
+        android:text="帮助" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:drawableStart="@drawable/save"
+        android:gravity="center_vertical"
+        android:text="保存" />
+</androidx.appcompat.widget.LinearLayoutCompat>

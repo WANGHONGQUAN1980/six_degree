@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical"
+    tools:context="whq.projects.sd.ui.search.ShowOnePersonFragment"
+    tools:openDrawer="end">
+
+    <WebView
+        android:id="@+id/webviewer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp" />
+
+    <include
+        android:id="@+id/navigationView"
+        layout="@layout/contact_it"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/md_white_1000"
+        android:fitsSystemWindows="false" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/md_white_1000"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/add_relations_toolbar_include"
+                layout="@layout/show_person_toolbar" />
+
+            <include
+                android:id="@+id/sd_fragment_toolbar_include"
+                layout="@layout/sd_fragment_toolbar" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</androidx.drawerlayout.widget.DrawerLayout>

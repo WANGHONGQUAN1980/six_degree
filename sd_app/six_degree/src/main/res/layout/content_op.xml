@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/md_white_1000"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/createtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="createtime" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/keyword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/zan"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createtime"
+        tools:text="keyword" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/zan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/thumb_up"
+        android:drawablePadding="8dp"
+        android:text="赞"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/zan_number"
+        app:layout_constraintTop_toBottomOf="@id/keyword" />
+
+    <com.liefery.android.icon_badge.IconBadgeView
+        android:id="@+id/zan_number"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="3dp"
+        app:iconBadge_backgroundShapeColor="#00ffffff"
+        app:iconBadge_foregroundShapeColor="#003300"
+        app:iconBadge_number="11"
+        app:layout_constraintLeft_toRightOf="@+id/zan"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/zan" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/thumb_down"
+        android:drawablePadding="8dp"
+        android:text="踩"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/cai_number"
+        app:layout_constraintTop_toBottomOf="@+id/zan" />
+
+    <com.liefery.android.icon_badge.IconBadgeView
+        android:id="@+id/cai_number"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="3dp"
+        app:iconBadge_backgroundShapeColor="#00ffffff"
+        app:iconBadge_foregroundShapeColor="#003300"
+        app:iconBadge_number="11"
+        app:layout_constraintLeft_toRightOf="@+id/cai"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cai" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/add"
+        android:drawablePadding="8dp"
+        android:text="关注"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/add_number"
+        app:layout_constraintTop_toBottomOf="@+id/cai" />
+
+    <com.liefery.android.icon_badge.IconBadgeView
+        android:id="@+id/add_number"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="3dp"
+        app:iconBadge_backgroundShapeColor="#00ffffff"
+        app:iconBadge_foregroundShapeColor="#003300"
+        app:iconBadge_number="11"
+        app:layout_constraintLeft_toRightOf="@+id/add"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/add" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/favourite"
+        android:drawablePadding="8dp"
+        android:text="收藏"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/fav_number"
+        app:layout_constraintTop_toBottomOf="@+id/add" />
+
+    <com.liefery.android.icon_badge.IconBadgeView
+        android:id="@+id/fav_number"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:elevation="3dp"
+        app:iconBadge_backgroundShapeColor="#00ffffff"
+        app:iconBadge_foregroundShapeColor="#003300"
+        app:iconBadge_number="11"
+        app:layout_constraintLeft_toRightOf="@+id/fav"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fav" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

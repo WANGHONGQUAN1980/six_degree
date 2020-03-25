@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.preference.PreferenceCategory android:title="基本信息">
+        <whq.projects.sd.profile.preference.DateSelectPreference
+            android:key="born_date"
+            android:title="生日" />
+        <androidx.preference.CheckBoxPreference
+            android:defaultValue="true"
+            android:key="gender"
+            android:summaryOff="我是女生"
+            android:summaryOn="我是男生"
+            android:title="我是男生?" />
+        <whq.projects.sd.profile.preference.RelationFavouritePreference
+            android:key="relation_favourite"
+            android:title="关系偏好" />
+    </androidx.preference.PreferenceCategory>
+    <androidx.preference.PreferenceCategory android:title="地址信息">
+        <whq.projects.sd.profile.preference.LocationSelectPreference
+            android:key="zhu_zhi"
+            android:title="住址" />
+        <whq.projects.sd.profile.preference.LocationSelectPreference
+            android:key="ji_guan"
+            android:title="籍贯" />
+        <whq.projects.sd.profile.preference.LocationSelectPreference
+            android:key="work"
+            android:title="工作在" />
+        <whq.projects.sd.profile.preference.LocationSelectPreference
+            android:key="jiu_du"
+            android:title="就读在" />
+    </androidx.preference.PreferenceCategory>
+    <androidx.preference.PreferenceCategory android:title="学校信息">
+        <whq.projects.sd.profile.preference.EditTextPromptYearPreference
+            android:key="under_graduate_school"
+            android:title="大学" />
+
+        <whq.projects.sd.profile.preference.EditTextPromptYearPreference
+            android:key="post_graduate_school"
+            android:title="硕士" />
+
+        <whq.projects.sd.profile.preference.EditTextPromptYearPreference
+            android:key="doctoral_school"
+            android:title="博士" />
+
+        <whq.projects.sd.profile.preference.EditTextPromptYearPreference
+            android:key="high_school"
+            android:title="高中" />
+
+        <whq.projects.sd.profile.preference.EditTextPromptYearPreference
+            android:key="middle_school"
+            android:title="初中" />
+
+        <whq.projects.sd.profile.preference.EditTextPromptYearPreference
+            android:key="small_school"
+            android:title="小学" />
+
+        <whq.projects.sd.profile.preference.EditTextPromptYearPreference
+            android:key="you_er_yuan_school"
+            android:title="幼儿园" />
+
+    </androidx.preference.PreferenceCategory>
+    <androidx.preference.PreferenceCategory android:title="单位信息">
+        <whq.projects.sd.profile.preference.EditTextPromptYearPreference
+            android:key="work_current"
+            android:title="当前工作在" />
+        <whq.projects.sd.profile.preference.EditTextPromptYearPreference
+            android:key="work_ever"
+            android:title="曾经工作于" />
+    </androidx.preference.PreferenceCategory>
+</androidx.preference.PreferenceScreen>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="wrap_content" android:layout_width="match_parent">
+    <cn.forward.androids.views.StringScrollPicker
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/view_first"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        app:spv_center_item_background="#22888888"
+        app:spv_disallow_intercept_touch="true"
+        app:spv_max_text_size="18dp"
+        app:spv_min_text_size="12dp"
+        android:theme="@style/AppAlertDialogContent"
+        app:spv_visible_item_count="3" />
+    <cn.forward.androids.views.StringScrollPicker
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:theme="@style/AppAlertDialogContent"
+        android:id="@+id/view_second"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        app:spv_center_item_background="#22888888"
+        app:spv_disallow_intercept_touch="true"
+        app:spv_max_text_size="18dp"
+        app:spv_min_text_size="12dp"
+        app:spv_visible_item_count="3" />
+    <cn.forward.androids.views.StringScrollPicker
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:theme="@style/AppAlertDialogContent"
+        android:id="@+id/view_third"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        app:spv_center_item_background="#22888888"
+        app:spv_disallow_intercept_touch="true"
+        app:spv_max_text_size="18dp"
+        app:spv_min_text_size="12dp"
+        app:spv_visible_item_count="3" />
+</LinearLayout>

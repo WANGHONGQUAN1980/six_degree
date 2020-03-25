@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>six_degree</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/neo4jd3.css"/>
+    <script src="js/lodash.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/sd.js"></script>
+    <style>
+        body, html, #neo4jd3 {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="neo4jd3"></div>
+<script type="text/javascript">
+    console.log("relations.html begin")
+    let neo4jd3;
+
+    function zoomTimes(is_in) {
+        neo4jd3.zoomTimes(is_in)
+    }
+
+    function focus(id) {
+        var count = 0
+        $("#" + id)[0].scrollIntoView();
+        console.log("scrollIntoView:" + id)
+        var showHide = setInterval(function () {
+            if (count == 10) {
+                clearInterval(showHide)
+            }
+            const obj = $("#" + id);
+            obj.hide(100);
+            obj.show(100);
+            count += 1
+        }, 500)
+    }
+
+    function update(updateData) {
+        let mergeData = neo4jd3.mergeData(JSON.parse(updateData));
+        updateWithNeo4jData(JSON.stringify(mergeData))
+    }
+    function if_undefined(value,other) {
+        if (value === undefined)
+                return other;
+            else
+                return value
+    }
+    function undefined2null(value) {
+        if (value === undefined)
+            return null;
+        else
+            return value
+    }
+
+    function updateWithNeo4jData(newdata) {
+        neo4jd3 = new Neo4jd3('#neo4jd3', {
+            highlight: [
+                {
+                    class: '13800000000',
+                    property: 'userId',
+                    value: '0'
+                }, {
+                    class: '13400000000',
+                    property: 'userId',
+                    value: '1'
+                }
+            ],
+            images: {
+                '13810347889': 'img/twemoji/1f36a.svg',
+                '13426059622': 'img/twemoji/1f4b3.svg',
+                '13426059623': 'img/twemoji/1f4bb.svg',
+                'qh134260596': 'img/twemoji/2709.svg',
+                'lf134260596': 'img/twemoji/1f5c3.svg',
+                'cyl134260596': 'img/twemoji/1f5c4.svg'
+            },
+            minCollision: 60,
+            neo4jData: JSON.parse(newdata),
+            nodeRadius: 10,
+            onNodeClick: function (node) {
+                console.log("onNodeClick:" + JSON.stringify(node))
+                console.log(neo4jd3.isLeaf(node.id))
+                android.userNameClick(node.id, node.name, JSON.stringify(node))
+            },
+            onNodeDoubleClick: function (node) {
+                console.log("onNodeDoubleClick:" + JSON.stringify(node))
+                android.doubleClick(node.id, node.name, node.x, node.y)
+            },
+            onRelationshipClick: function (relationship) {
+                console.log("onRelationshipClick:" + JSON.stringify(relationship))
+                android.relationClick(relationship.updater, relationship.updaterName)
+            },
+            onRelationshipDoubleClick: function (relationship) {
+                console.log('double click on relationship: ' + JSON.stringify(relationship));
+                android.relationDoubleClick(
+                    relationship.baseType, relationship.type, relationship.rId,
+                    relationship.source.id, relationship.source.name, undefined2null(relationship.source.gender), undefined2null(relationship.source.born_date),
+                    relationship.target.id, relationship.target.name, undefined2null(relationship.target.gender), undefined2null(relationship.target.born_date),
+                    undefined2null(if_undefined(relationship.updater,relationship.writer)), undefined2null(if_undefined(relationship.updaterName,relationship.writerName)))
+            },
+            zoomFit: true
+        })
+    }
+
+    //updateWithNeo4jData(test)
+    //update('{"nodes":[{"id":"10000000055","labels":["贾敏"],"name":"贾敏","properties":{"writer":"100","updaterName":"系统","writerName":"系统","updated":"1566964110376","updater":"100","mobile":"10000000055","created":"1566574683419"}},{"id":"10000000054","labels":["林如海"],"name":"林如海","properties":{"writer":"100","updaterName":"系统","writerName":"系统","updated":"1566964110380","updater":"100","mobile":"10000000054","created":"1566574683426"}},{"id":"10000000008","labels":["贾代善"],"name":"贾代善","properties":{"writer":"100","updaterName":"系统","writerName":"系统","updated":"1566964110375","updater":"100","mobile":"10000000008","created":"1566574683418"}},{"id":"10000000035","labels":["贾母"],"name":"贾母","properties":{"writer":"100","updaterName":"系统","writerName":"系统","updated":"1566964110376","updater":"100","mobile":"10000000035","created":"1566574683419"}}],"relationships":[{"writer":"100","qin_shu_type":"HUSBAND_WIFE","updaterName":"系统","direction":"right","endNode":"10000000055","writerName":"系统","startNode":"10000000054","updated":"1566964110391","updater":"100","type":"夫妻","created":"1566574683440"},{"writer":"100","qin_shu_type":"FATHER_DAUGHTER","updaterName":"系统","direction":"right","endNode":"10000000055","writerName":"系统","startNode":"10000000008","updated":"1566964110387","updater":"100","type":"女儿","created":"1566574683435"},{"writer":"100","qin_shu_type":"FATHER_DAUGHTER","updaterName":"系统","direction":"right","endNode":"10000000055","writerName":"系统","startNode":"10000000035","updated":"1566964110387","updater":"100","type":"女儿","created":"1566574683435"}]}')
+    //focus("10000000028")
+    console.log("relations.html end")
+
+
+</script>
+</body>
+</html>

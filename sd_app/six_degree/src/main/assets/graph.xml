@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<graph>
+    <entities>
+        <person>
+            <property
+                    name="mobile"
+                    displayName="手机号"
+                    pattern="\d{11}"
+                    required="true" />
+            <property
+                    name="gender"
+                    displayName="性别"
+                    pattern="男|女" />
+            <property
+                    name="nickName"
+                    displayName="昵称"
+                    pattern="[a-zA-Z0-9_\u4e00-\u9fa5]{1,20}" />
+            <property
+                    name="note"
+                    displayName="备注"
+                    pattern="[a-zA-Z0-9_\u4e00-\u9fa5]{2,50}" />
+        </person>
+        <location>
+            <property
+                    name="position"
+                    displayName="名称"
+                    required="true" />
+        </location>
+        <school>
+            <property
+                    name="name"
+                    displayName="名称"
+                    required="true" />
+        </school>
+        <work_unit>
+            <property
+                    name="name"
+                    displayName="名称"
+                    required="true" />
+        </work_unit>
+    </entities>
+    <relations>
+        <tongxue
+                name="同学"
+                can_zhiding="true"
+                id="000"
+                mean="A的老师是B" />
+        <tongxue_yry
+                name="幼儿园同学"
+                id="000_000" />
+        <tongxue_xx
+                name="小学同学"
+                id="000_001" />
+        <tongxue_cz
+                name="初中同学"
+                id="000_002" />
+        <tongxue_gz
+                name="高中同学"
+                id="000_003" />
+        <tongxue_dx
+                name="大学同学"
+                id="000_004" />
+        <tongxue_ss
+                name="硕士同学"
+                id="000_005" />
+        <tongxue_bs
+                name="博士同学"
+                id="000_006" />
+
+        <tongshi
+                name="同事"
+                id="001" />
+        <tongshi_current
+                name="当前同事"
+                id="001_000" />
+        <tongshi_ever
+                name="前同事"
+                id="001_001" />
+
+        <qin_shu
+                name="亲属"
+                id="002" />
+        <qin_shu_husband
+                name="丈夫"
+                directional="true"
+                id="002_000"
+                mean="A的丈夫是B" />
+        <qin_shu_wife
+                name="妻子"
+                directional="true"
+                id="002_001" />
+
+        <qin_shu_gg
+                name="哥哥"
+                directional="true"
+                id="002_002" />
+        <qin_shu_gg_fimily
+                name="同胞哥哥"
+                directional="true"
+                id="002_002_000" />
+        <qin_shu_gg_tx
+                name="堂兄"
+                directional="true"
+                id="002_002_001"
+                mean="A的爸爸的兄弟家的哥哥是B" />
+        <qin_shu_gg_gbx
+                name="姑表兄"
+                directional="true"
+                id="002_002_002" />
+        <qin_shu_gg_ybx
+                name="姨表兄"
+                directional="true"
+                id="002_002_003" />
+        <qin_shu_gg_jbx
+                name="舅表兄"
+                directional="true"
+                id="002_002_004" />
+
+        <qin_shu_dd
+                name="弟弟"
+                directional="true"
+                id="002_003" />
+        <qin_shu_dd_fimily
+                name="同胞弟弟"
+                directional="true"
+                id="002_003_000" />
+        <qin_shu_dd_tx
+                name="堂弟"
+                directional="true"
+                id="002_003_001" />
+        <qin_shu_dd_gbx
+                name="姑表弟"
+                directional="true"
+                id="002_003_002" />
+        <qin_shu_dd_ybx
+                name="姨表弟"
+                directional="true"
+                id="002_003_003" />
+        <qin_shu_dd_jbx
+                name="舅表弟"
+                directional="true"
+                id="002_003_004" />
+
+        <qin_shu_jj
+                name="姐姐"
+                directional="true"
+                id="002_004" />
+        <qin_shu_jj_fimily
+                name="同胞姐姐"
+                directional="true"
+                id="002_004_000" />
+        <qin_shu_jj_tx
+                name="堂姐"
+                directional="true"
+                id="002_004_001" />
+        <qin_shu_jj_gbx
+                name="姑表姐"
+                directional="true"
+                id="002_004_002" />
+        <qin_shu_jj_ybx
+                name="姨表姐"
+                directional="true"
+                id="002_004_003" />
+        <qin_shu_jj_jbx
+                name="舅表姐"
+                directional="true"
+                id="002_004_004" />
+
+        <qin_shu_dd
+                name="弟弟"
+                directional="true"
+                id="002_005" />
+        <qin_shu_dd_fimily
+                name="同胞弟弟"
+                directional="true"
+                id="002_005_000" />
+        <qin_shu_dd_tx
+                name="堂弟"
+                directional="true"
+                id="002_005_001" />
+        <qin_shu_dd_gbx
+                name="姑表弟"
+                directional="true"
+                id="002_005_002" />
+        <qin_shu_dd_ybx
+                name="姨表弟"
+                directional="true"
+                id="002_005_003" />
+        <qin_shu_dd_jbx
+                name="舅表弟"
+                directional="true"
+                id="002_005_004" />
+
+        <qin_shu_father
+                name="爸爸"
+                directional="true"
+                id="002_006" />
+        <qin_shu_shushu
+                name="叔叔"
+                directional="true"
+                id="002_007" />
+        <qin_shu_bobo
+                name="伯伯"
+                directional="true"
+                id="002_008" />
+        <qin_shu_gugu
+                name="姑姑"
+                directional="true"
+                id="002_009" />
+
+        <qin_shu_monther
+                name="妈妈"
+                directional="true"
+                id="002_010" />
+        <qin_shu_jiujiu
+                name="舅舅"
+                directional="true"
+                id="002_011" />
+        <qin_shu_ayi
+                name="阿姨"
+                directional="true"
+                id="002_012" />
+
+        <qin_shu_yeye
+                name="爷爷"
+                directional="true"
+                id="002_013" />
+        <qin_shu_nainai
+                name="奶奶"
+                directional="true"
+                id="002_014" />
+
+        <qin_shu_sunzi
+                name="孙子"
+                directional="true"
+                id="002_015" />
+        <qin_shu_sunnv
+                name="孙女"
+                directional="true"
+                id="002_016" />
+
+        <friend
+                name="朋友"
+                id="003"
+                mean="A和B是朋友关系" />
+        <friend_net
+                name="网友"
+                id="003_000" />
+        <friend_net_owner_member
+                name="主从"
+                directional="true"
+                id="003_000_000"
+                mean="A是群主B是成员" />
+        <friend_net_inviter_invitee
+                name="邀请"
+                directional="true"
+                id="003_000_001"
+                mean="A邀请B进入群" />
+        <friend_business
+                name="生意朋友"
+                id="003_001" />
+        <friend_love
+                name="男女朋友"
+                id="003_002" />
+        <friend_normal
+                name="普通朋友"
+                id="003_003" />
+        <friend_black
+                name="黑名单朋友"
+                id="003_004" />
+
+        <teacher
+                name="师从"
+                directional="true"
+                id="004"
+                mean="A的老师是B" />
+        <teacher_qm
+                name="启蒙师从"
+                directional="true"
+                id="004_000" />
+        <teacher_yry
+                name="幼儿园师从"
+                directional="true"
+                id="004_001" />
+        <teacher_xx
+                name="小学师从"
+                directional="true"
+                id="004_002" />
+        <teacher_cz
+                name="初中师从"
+                directional="true"
+                id="004_003" />
+        <teacher_gz
+                name="高中师从"
+                directional="true"
+                id="004_004" />
+        <teacher_dx
+                name="大学师从"
+                directional="true"
+                id="004_005" />
+        <teacher_ss
+                name="硕士师从"
+                directional="true"
+                id="004_006" />
+        <teacher_bs
+                name="博士师从"
+                directional="true"
+                id="004_007" />
+
+        <contracts
+                name="通讯录"
+                directional="true"
+                id="005"
+                mean="A的通讯录里有B" />
+
+        <graduated_from
+                name="毕业于"
+                directional="true"
+                id="006"
+                mean="A毕业于B学校"
+                not_person="true">
+            <property
+                    name="年份"
+                    pattern="\d{4}" />
+        </graduated_from>
+
+        <locate_at
+                name="位于"
+                directional="true"
+                id="007"
+                mean="A位于B位置"
+                not_person="true" />
+        <locate_at_ji_guan
+                name="籍贯在"
+                directional="true"
+                id="007_000"
+                mean="A籍贯在B位置"
+                not_person="true" />
+        <locate_at_jiu_du
+                name="就读在"
+                directional="true"
+                id="007_001"
+                not_person="true" />
+        <locate_at_ju_zhu
+                name="居住在"
+                directional="true"
+                id="007_002"
+                not_person="true" />
+        <locate_at_work_at
+                name="工作在"
+                directional="true"
+                id="007_003"
+                not_person="true" />
+
+        <work_at
+                name="就职在"
+                directional="true"
+                id="008"
+                mean="A工作在B单位"
+                not_person="true" />
+        <work_at_current
+                name="当前就职在"
+                directional="true"
+                id="008_000"
+                not_person="true" />
+        <work_at_ever
+                name="曾经就职在"
+                directional="true"
+                id="008_001"
+                not_person="true" />
+
+        <belong_to
+                name="从属于"
+                directional="true"
+                id="009"
+                mean="长春从属于吉林省"
+                not_person="true" />
+
+        <read
+                name="读过"
+                directional="true"
+                id="010"
+                mean="A读过B的文章" />
+        <favourite
+                name="关注"
+                directional="true"
+                id="011"
+                mean="A关注B" />
+
+    </relations>
+</graph>
